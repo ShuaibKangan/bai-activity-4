@@ -1,9 +1,6 @@
 # Fetching Activities — DummyJSON Recipes
 
-A series of progressive JavaScript activities teaching how to fetch data from an API using `fetch()` and callback functions with `.then()`.
-
-> **Important:** These activities use **callback functions** and **`.then()`** only.  
-> Do **not** use arrow functions (`=>`) or `async` / `await`. Every callback must be a named function declared with `function`.
+JavaScript activities and reading material on how to fetch data from an API using `fetch()` and callback functions with `.then()`.
 
 You will use the **DummyJSON Recipes API**:
 
@@ -18,8 +15,6 @@ You can test any URL in your browser to see the JSON it returns.
 ## Reading Material — Read This First
 
 Complete these short readings **before** starting the activities. They explain `fetch()`, callback functions, and `.then()` with the same DummyJSON recipes API you will use.
-
-> **Suggested path:** Do `01` (API/fetch) → `02` (JSON) → `04` (callbacks) → `05` (Promises) → `07` (`getElementById`) → `06` (full pattern). `03` (parse/stringify) is optional — needed only if you save to `localStorage`; you can do it after the activities.
 
 | Order | Topic | What you will learn |
 |-------|-------|---------------------|
@@ -39,7 +34,6 @@ Complete these short readings **before** starting the activities. They explain `
 ## Activities
 
 ### [Activity 1: Fetch and Display a Single Recipe](activity-1/)
-**Difficulty:** Beginner ⭐
 
 Fetch one recipe and display its details on the page.
 
@@ -52,7 +46,6 @@ Fetch one recipe and display its details on the page.
 ---
 
 ### [Activity 2: Fetch and Display All Recipes](activity-2/)
-**Difficulty:** Easy ⭐⭐
 
 Fetch the full list of recipes and display them as cards.
 
@@ -65,7 +58,6 @@ Fetch the full list of recipes and display them as cards.
 ---
 
 ### [Activity 3: Search Recipes on Button Click](activity-3/)
-**Difficulty:** Intermediate ⭐⭐⭐
 
 Add a search box and button. When the user clicks search, fetch matching recipes and display the results.
 
@@ -79,53 +71,19 @@ Add a search box and button. When the user clicks search, fetch matching recipes
 
 ## Getting Started
 
-1. Open the activity folder you want to complete (e.g. `activity-1/`)
-2. Read the instructions in the markdown file (`activity-1.md`)
-3. Open `script.js` and follow the `TODO` steps — the file contains starter comments
-4. Open `index.html` via **Live Server** or **Live Preview** (`http://` required) — don't double-click the file. In VS Code: right-click `index.html` → *Open with Live Server*.
-5. Open Developer Tools (F12) → Console to see logs/errors and **Network → Preview** to inspect the JSON.
-6. Check `sample/script.js` only if you are stuck — try to complete the `TODO`s first.
-
-## Rules For All Activities
-
-- Use `const` for variables that don't change, `let` for variables that do — never use `var`
-- Do **not** use arrow functions — always write `function myCallback() { }` and pass the name to `.then()`
-- Do **not** use `async` / `await` — only use `.then()`
-- Use `document.getElementById()` to get elements and update them
+1. Fork this repository
+2. Clone your forked repository to your computer
+3. Open the activity folder you want to complete (e.g. `activity-1/`)
+4. Read the instructions in the markdown file (`activity-1.md`)
+5. Open `script.js` and follow the `TODO` steps — the file contains starter comments
+6. Open `index.html` via **Live Server** or **Live Preview**
+7. Open Developer Tools (F12) → Console to see logs/errors and **Network → Preview** to inspect the JSON.
+8. Check `sample/script.js` only if you are stuck — try to complete the `TODO`s first.
 
 ## Samples
 
-Each activity has a `sample/script.js` with the completed solution. Use it to check your work after trying, not before.
+Each activity has a `sample/script.js` with the completed solution. Use it to check your work after (or if you get stuck).
 
 - `activity-1/sample/script.js`
 - `activity-2/sample/script.js`
 - `activity-3/sample/script.js`
-
-## API Reference
-
-Try these in your browser address bar:
-
-| URL | What it returns |
-|-----|-----------------|
-| `https://dummyjson.com/recipes` | Object with `recipes` array (30 recipes) |
-| `https://dummyjson.com/recipes/1` | Single recipe object with `name`, `image`, `ingredients`, `instructions`, etc. |
-| `https://dummyjson.com/recipes/search?q=pizza` | Object with `recipes` array of matching recipes |
-
-A single recipe object looks like:
-
-```json
-{
-  "id": 1,
-  "name": "Classic Margherita Pizza",
-  "ingredients": ["Pizza dough", "Tomato sauce", "..."],
-  "instructions": ["Preheat the oven...", "..."],
-  "prepTimeMinutes": 20,
-  "cookTimeMinutes": 15,
-  "servings": 4,
-  "difficulty": "Easy",
-  "cuisine": "Italian",
-  "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
-  "rating": 4.6,
-  "mealType": ["Dinner"]
-}
-```
