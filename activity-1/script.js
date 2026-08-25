@@ -34,6 +34,7 @@ const recipeCuisine = document.getElementById('recipeCuisine');
 const recipeDifficulty = document.getElementById('recipeDifficulty');
 const recipePrepTime = document.getElementById('recipePrepTime');
 const recipeIngredients = document.getElementById('recipeIngredients');
+const recipeInstructions = document.getElementById('recipeInstructions')
 const recipeRating = document.getElementById('recipeRating');
 
 function onRecipeReady(recipe) {
@@ -42,8 +43,8 @@ function onRecipeReady(recipe) {
     recipeImage.src = recipe.image;
     recipeImage.alt = recipe.name;
 
-    recipeCuisine.innerText = 'cuisine: ' + recipe.cuisine;
-    recipeDifficulty.innerText = 'difficulty: ' + recipe.difficulty;
+    recipeCuisine.innerText = 'Cuisine: ' + recipe.cuisine;
+    recipeDifficulty.innerText = 'Difficulty: ' + recipe.difficulty;
     recipePrepTime.innerText = 'Prep time: ' + recipe.prepTimeMinutes + 'mins';
     recipeRating.innerText = 'Rating: ' + recipe.rating + ' (' + recipe.reviewCount + ' reviews)';
 
@@ -53,18 +54,21 @@ function onRecipeReady(recipe) {
     }
     recipeIngredients.innerHTML = ingredientsHTML;
 
-
     let instructionsHTML = '';
-    for (let i = 0; i < recipe.instructionsHTML.length; i++) {
-        instructionsHTML = instructionsHTML + '<li>' + instructionsHTML[i] + '</li>';
+    for (let i = 0; i < recipe.instructions.length; i++) {
+        instructionsHTML = instructionsHTML + '<li>' + recipe.instructions[i] + '</li>';
     }
-    recipeInstructions.innerHTML = InstructionsHTML;
-
-    function onResponseReady(response) {
-        response.json().then(onRecipeReady);    
-    }
-
-    fetch('https://dummyjason.com/recipes/3').then(onResponseReady);
-
-
+    recipeInstructions.innerHTML = instructionsHTML;
+   
 }
+
+
+
+function onResponseReady(response) {
+    response.json().then(onRecipeReady);    
+}
+
+fetch('https://dummyjson.com/recipes/3').then(onResponseReady);
+
+
+
