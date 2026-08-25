@@ -41,13 +41,13 @@ function onDataReady(data) {
     for (let i = 0; i < recipes.length; i++) {
         const recipe = recipes[i];
         html = html + '<div class="card">';
-        hmtl = html + '<img src="' + recipe.image + '" alt="' + recipe.name + '">';
+        html = html + '<img src="' + recipe.image + '" alt="' + recipe.name + '">';
         html = html + '<div class="card-body">';
         html = html + '<h3>' + recipe.name + '</h3>';
         html = html + '<p class="meta">' + recipe.cuisine + ' . ' + recipe.difficulty + '</p>';
         html = html + '<p class="rating">★ ' + recipe.rating + '<p/>';
         html = html + '<p class="time">prep: ' + recipe.prepTimeMinutes + ' mins</p>';
-        html = html + '</div>';
+        html = html + '</div>'; 
         html = html + '</div>';
     }
 
