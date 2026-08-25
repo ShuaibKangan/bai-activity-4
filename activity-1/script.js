@@ -27,3 +27,39 @@
 
 // TODO Step 3: Fetch the recipe
 // fetch('https://dummyjson.com/recipes/1').then(onResponseReady);
+
+const recipeName = document.getElementById('recipeName');
+const recipeImage = document.getElementById('recipeImage');
+const recipeCuisine = document.getElementById('recipeCuisine');
+const recipeDifficulty = document.getElementById('recipeDifficulty');
+const recipePrepTime = document.getElementById('recipePrepTime');
+const recipeIngredients = document.getElementById('recipeIngredients');
+const recipeRating = document.getElementById('recipeRating');
+
+function onRecipeReady(recipe) {
+    recipeName.innerText = recipe.name;
+
+    recipeImage.src = recipe.image;
+    recipeImage.alt = recipe.name;
+
+    recipeCuisine.innerText = 'cuisine: ' + recipe.cuisine;
+    recipeDifficulty.innerText = 'difficulty: ' + recipe.difficulty;
+    recipePrepTime.innerText = 'Prep time: ' + recipe.prepTimeMinutes + 'mins';
+    recipeRating.innerText = 'Rating: ' + recipe.rating + ' (' + recipe.reviewCount + ' reviews)';
+
+    let ingredientsHTML = '';
+    for (let i = 0; i < recipe.ingredients.length; i++ ) {
+        ingredientsHTML = ingredientsHTML + '<li>' + recipe.ingredients[i] + '</li>';
+    }
+
+    recipeIngredients.innerHTML = ingredientsHTML;
+
+
+    let instructionsHTML = '';
+    for (let i = 0; i < recipe.instructionsHTML.length; i++) {
+        instructionsHTML = instructionsHTML + '<li>' + instructionsHTML[i] + '</li>';
+    }
+
+    recipeInstructions.innerHTML = InstructionsHTML;
+
+}
