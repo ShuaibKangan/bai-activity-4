@@ -51,7 +51,6 @@ function onRecipeReady(recipe) {
     for (let i = 0; i < recipe.ingredients.length; i++ ) {
         ingredientsHTML = ingredientsHTML + '<li>' + recipe.ingredients[i] + '</li>';
     }
-
     recipeIngredients.innerHTML = ingredientsHTML;
 
 
@@ -59,7 +58,13 @@ function onRecipeReady(recipe) {
     for (let i = 0; i < recipe.instructionsHTML.length; i++) {
         instructionsHTML = instructionsHTML + '<li>' + instructionsHTML[i] + '</li>';
     }
-
     recipeInstructions.innerHTML = InstructionsHTML;
+
+    function onResponseReady(response) {
+        response.json().then(onRecipeReady);    
+    }
+
+    fetch('https://dummyjason.com/recipes/3').then(onResponseReady);
+
 
 }
